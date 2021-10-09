@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { NavLink, Link } from 'react-router-dom';
-import logo from '../images/header__logo.svg';
+import { Link } from 'react-router-dom';
 import Input from './Input';
+import Header from './Header';
 
 const Login = ({ handleLogin }) => {
   const [email, setEmail] = useState('');
@@ -23,16 +23,7 @@ const Login = ({ handleLogin }) => {
   return (
     <div className='page'>
       <div className='page__container'>
-        <header className='header'>
-          <img className='header__logo' src={logo} alt='Around US logo' />
-          <ul className='header__menu'>
-            <li>
-              <NavLink to='/signup' className='header__link'>
-                Sign up
-              </NavLink>
-            </li>
-          </ul>
-        </header>
+        <Header />
         <form className='form__autorization' onSubmit={handleSubmit}>
           <h2 className='form__title form__title-autorization'>Log in</h2>
           <Input

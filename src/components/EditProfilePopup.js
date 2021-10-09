@@ -29,7 +29,7 @@ export default function EditProfilePopup(props) {
   useEffect(() => {
     setName(currentUser.name);
     setAbout(currentUser.about);
-  }, [currentUser]);
+  }, [currentUser, props.isOpen]);
 
   return (
     <PopupWithForm

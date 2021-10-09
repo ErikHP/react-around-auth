@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import logo from '../images/header__logo.svg';
+import Header from './Header';
 import Input from './Input';
 
 const Register = ({ handleRegister }) => {
@@ -23,16 +23,7 @@ const Register = ({ handleRegister }) => {
   return (
     <div className='page'>
       <div className='page__container'>
-        <header className='header'>
-          <img className='header__logo' src={logo} alt='Around US logo' />
-          <ul className='header__menu'>
-            <li>
-              <NavLink to='/signin' className='header__link'>
-                Log in
-              </NavLink>
-            </li>
-          </ul>
-        </header>
+        <Header />
         <form className='form__autorization' onSubmit={handleSubmit}>
           <h2 className='form__title form__title-autorization'>Sign up</h2>
           <Input
