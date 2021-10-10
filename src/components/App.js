@@ -178,6 +178,7 @@ export default function App() {
         handleTooltip();
       })
       .catch((err) => console.log(err));
+      setIsregestered(false);
   }
 
   function handleTooltip() {
@@ -189,14 +190,12 @@ export default function App() {
       .login(email, password)
       .then((data) => {
         if (data.token) {
-          handleLogin();
+          setLoggedIn(true);
           setEmail(email);
           history.push('/');
         }
       })
       .catch((err) => console.log(err));
-    setLoggedIn(true);
-    setEmail(email);
   }
 
   function handleLogout() {
@@ -218,7 +217,7 @@ export default function App() {
           setLoggedIn(true);
           history.push('/');
         }
-      });
+      }).catch((err) => console.log(err));
     }
   }, [history]);
 
