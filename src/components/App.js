@@ -162,7 +162,7 @@ export default function App() {
       .catch((err) => console.log(err));
   }, []);
 
-  // REGISTARTION, LOG IN, LOG OUT, TOKEN CHECK
+  // REGISTRATION, LOG IN, LOG OUT, TOKEN CHECK
   function handleRegister(email, password) {
     auth
       .register(email, password)

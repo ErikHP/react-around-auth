@@ -1,4 +1,5 @@
 import logo from '../images/header__logo.svg';
+import { NavLink } from 'react-router-dom';
 
 export default function Header({ loggedIn, onLogout, email }) {
   return (
@@ -7,13 +8,11 @@ export default function Header({ loggedIn, onLogout, email }) {
       <ul className='header__menu'>
         <li>{loggedIn ? <p className='header__email'>{email}</p> : ''}</li>
         <li>
-          {loggedIn ? (
-            <button className='header__button' onClick={onLogout}>
-              Log out
-            </button>
-          ) : (
-            ''
-          )}
+          {loggedIn ? <NavLink to='/signup' className='header__link'>
+                Sign up
+              </NavLink> : <NavLink to='/signup' className='header__link'>
+          Log in
+        </NavLink>}
         </li>
       </ul>
     </header>
