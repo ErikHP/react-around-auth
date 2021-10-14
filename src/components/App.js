@@ -170,15 +170,13 @@ export default function App() {
         if (res.data) {
           setEmail(email);
           setIsregestered(true);
-          handleTooltip();
-          history.push('/signin');
-          return;
+          history.push('/signup');
         }
-        setIsregestered(false);
-        handleTooltip();
       })
-      .catch((err) => console.log(err));
-      setIsregestered(false);
+      .catch((err) => {
+        setIsregestered(false);
+        setIsToolTipOpen(true);
+      });   
   }
 
   function handleTooltip() {
@@ -195,7 +193,9 @@ export default function App() {
           history.push('/');
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        setIsToolTipOpen(true);
+      });
   }
 
   function handleLogout() {
