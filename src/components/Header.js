@@ -7,12 +7,15 @@ export default function Header({ loggedIn, onLogout, email }) {
     <header className='header'>
       <img className='header__logo' src={logo} alt='Around US logo' />
       <ul className='header__menu'>
+        
         <li>{loggedIn ? <p className='header__email'>{email}</p> : ''}</li>
+        
         <li>
         <Route path="/signin">
-          {loggedIn ? <NavLink to='/signin' className='header__link'>
+        {loggedIn ? <NavLink to='/' className='header__link'>
               Log out 
-              </NavLink> : <NavLink to='/signup' className='header__link'>
+              </NavLink> : 
+          <NavLink to='/signup' className='header__link'>
               Sign up
         </NavLink>}
         </Route>
@@ -22,6 +25,9 @@ export default function Header({ loggedIn, onLogout, email }) {
           </NavLink>
         </Route>
         </li>
+        <li>{loggedIn ? <button onClick={onLogout} className='header__button'>
+              Log out </button>
+              : null }</li>
       </ul>
     </header>
   );

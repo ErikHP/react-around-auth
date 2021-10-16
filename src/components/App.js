@@ -170,6 +170,7 @@ export default function App() {
         if (res.data) {
           setEmail(email);
           setIsregestered(true);
+          setIsToolTipOpen(true);
           history.push('/signup');
         }
       })
